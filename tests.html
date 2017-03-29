@@ -73,6 +73,14 @@
 			temp = result.search('H').result;
 			ok(!!temp, 'Ought to be falsy.');
 			
+			ok(result._getIgnoreCaseValue, 'Ought to be truthy.');
+			ok(result._getMultiLineValue, 'Ought to be truthy.');
+			ok(result._getGlobalValue, 'Ought to be truthy.');
+		
+			ok(result._setIgnoreCaseValue, 'Ought to be truthy.');
+			ok(result._setMultiLineValue, 'Ought to be truthy.');
+			ok(result._setGlobalValue, 'Ought to be truthy.');
+			
 			/*
 				result = spyOn(result, '_index');
 				
