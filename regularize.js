@@ -45,16 +45,10 @@ Regularize.prototype._search = function (inputString) {
 	return result;
 };
 
-Regularize.prototype._index = function (inputString) {
+
+Regularize.prototype.search = function (inputString) {
 	var result;
 	result = this._search(inputString);
-	
-	return result;
-};
-
-Regularize.prototype.index = function (inputString) {
-	var result;
-	result = this._index(inputString);
 	
 	this._setIndex(result);
 	this.result = result;

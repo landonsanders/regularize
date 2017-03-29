@@ -68,11 +68,10 @@
 			ok(!temp, 'Ought to be falsy; _getIndex.');
 		
 			ok(result._search, 'Ought to be truthy.');
-			ok(result._index, 'Ought to be truthy.');
-			ok(result.index, 'Ought to be truthy.');
+			ok(result.search, 'Ought to be truthy.');
 			
-			temp = result.index('H');
-			ok(!temp, 'Ought to be falsy.');
+			temp = result.search('H').result;
+			ok(!!temp, 'Ought to be falsy.');
 			
 			/*
 				result = spyOn(result, '_index');
