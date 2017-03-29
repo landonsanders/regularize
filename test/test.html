@@ -1,0 +1,84 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Regularize</title>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Tests</h1>
+			<p>The result of the tests are in the console!?</p>
+		</div>
+		<script src="js/regularize.js"></script>
+		<script>
+			// Testing assertions
+
+			function assert(value) {
+				var result;
+
+				result = (value)? true: false;
+
+				return result;
+			}
+
+			function ok(value, description) {
+				var result, condition;
+				
+				condition = assert(value);
+				result = (condition)? 'PASS: ' + description: 'FAIL: ' + description;
+
+				console.log(result);
+			}
+			
+			// Testing spy
+			
+			function spyOn(subject, methodName) {
+				var result, CALLED;
+				
+				CALLED = false;
+				
+				
+				function result() {
+					result.CALLED = true;
+					return undefined;
+				}
+				
+				result.CALLED = CALLED;
+				
+				subject[methodName] = result;
+				
+				return subject;
+			}
+		</script>
+
+		<script>
+			var result, temp;
+		
+			ok(Regularize && typeof Regularize === 'function', 'Ought to be truthy; ought to be a function.');
+
+			result = new Regularize('hello hi world\nhello again world');
+
+			ok(result && typeof result === 'object', 'Ought to be truthy; ought to be an object.');
+			
+			ok(result.beginsWith, 'Ought to be truthy.');
+			
+			temp = result.beginsWith('h');
+			ok(temp, 'Ought to be truthy.');
+			
+			ok(result.execute, 'Ought to be truthy.');
+			ok(result.check, 'Ought to be truthy.');
+			
+			temp = result.check();
+			ok(temp, 'Ought to be truthy; true.');
+			
+			/*
+				result = spyOn(result, '_index');
+				
+				result.index();
+				ok(!result._index.CALLED, 'Ought to be falsy');
+				ok(!!result._index.CALLED, 'Ought to be falsy');
+			*/
+		</script>
+	</body>
+</html>
