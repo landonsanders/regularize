@@ -50,7 +50,7 @@ Regularize.prototype.replace = function (from, to) {
 	return this;
 };
 
-Regularize.prototype.result = function () {
+Regularize.prototype.get = function () {
 	var result;
 	
 	result = this.result;
