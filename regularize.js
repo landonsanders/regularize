@@ -38,16 +38,16 @@ Regularize.prototype._getIndex = function () {
 	return result;
 }
 
-Regularize.prototype._search = function (input) {
+Regularize.prototype._search = function (inputString) {
 	var result;
-	result = this.value.search(value);
+	result = this.value.search(inputString);
 	
 	return result;
 };
 
-Regularize.prototype._index = function (value) {
+Regularize.prototype._index = function (inputString) {
 	var result;
-	result = this._search(value);
+	result = this._search(inputString);
 	
 	return result;
 };
@@ -57,6 +57,7 @@ Regularize.prototype.index = function (inputString) {
 	result = this._index(inputString);
 	
 	this._setIndex(result);
+	this.result = result;
 	return this;
 };
 

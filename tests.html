@@ -65,17 +65,22 @@
 			ok(result._getIndex, 'Ought to be truthy.');
 			
 			temp = result._getIndex();
-			ok(!temp, 'Ought to be falsy.');
+			ok(!temp, 'Ought to be falsy; _getIndex.');
 		
 			ok(result._search, 'Ought to be truthy.');
 			ok(result._index, 'Ought to be truthy.');
 			ok(result.index, 'Ought to be truthy.');
-		
-			result = spyOn(result, '_index');
 			
-			result.index();
-			ok(!result._index.CALLED, 'Ought to be falsy');
-			ok(!!result._index.CALLED, 'Ought to be falsy');
+			temp = result.index('H');
+			ok(!temp, 'Ought to be falsy.');
+			
+			/*
+				result = spyOn(result, '_index');
+				
+				result.index();
+				ok(!result._index.CALLED, 'Ought to be falsy');
+				ok(!!result._index.CALLED, 'Ought to be falsy');
+			*/
 		</script>
 	</body>
 </html>
