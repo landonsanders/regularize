@@ -40,7 +40,7 @@ Regularize.prototype._getIndex = function () {
 
 Regularize.prototype._search = function (inputString) {
 	var result;
-	result = this.value.search(inputString);
+	result = this.input.search(inputString);
 	
 	return result;
 };
