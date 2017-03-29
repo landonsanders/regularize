@@ -17,7 +17,7 @@ Regularize.prototype._index = function (patternString) {
 
 Regularize.prototype._match = function (patternString) {
 	var result;
-	result = this.input.match(patternString);
+	result = this.input.match(patternString) + '';
 	
 	return result;
 };
