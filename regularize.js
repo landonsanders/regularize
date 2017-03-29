@@ -127,3 +127,54 @@ Regularize.prototype.addFlags = function (flags) {
 	
 	return this;
 };
+
+Regularize.prototype.beginsWith = function (prefix) {
+	var result, flag;
+	result = '^' + prefix + '.+';
+	
+	flag = '';
+	
+	if (this.ignoreCaseValueFlag) {
+		flag = flag + 'i';
+	}
+	
+	if (this.globalValueFlag) {
+		flag = flag + 'g';
+	}
+
+	if (this.multiLineValueFlag) {
+		flag = flag + 'm';
+	}
+	
+	this.value = new RegExp(result, flag);
+	
+	return this;
+};
+
+Regularize.prototype.endsWith = function (suffix) {
+	var result, flag;
+	result = '.+' + suffix + '$';
+	
+	flag = '';
+	
+	if (this.ignoreCaseValueFlag) {
+		flag = flag + 'i';
+	}
+	
+	if (this.globalValueFlag) {
+		flag = flag + 'g';
+	}
+
+	if (this.multiLineValueFlag) {
+		flag = flag + 'm';
+	}
+	
+	this.value = new RegExp(result, flag);
+	
+	return this;
+};
+
+Regularize.prototype.execute = function () {
+	this.result = this.value.exec(this.inputString);
+	return this;
+};
