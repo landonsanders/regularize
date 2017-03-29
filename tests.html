@@ -61,8 +61,16 @@
 
 			ok(result && typeof result === 'object', 'Ought to be truthy; ought to be an object.');
 			
+			ok(result.check, 'Ought to be truthy.');
+			
+			temp = result.check(/^h(i|e)/);
+			ok(temp, 'Ought to be truthy; true.');
+			
 			ok(result.beginsWith, 'Ought to be truthy.');
-			ok(result.endsWith, 'Ought to be truthy.');
+			
+			temp = result.beginsWith('h');
+			ok(temp, 'Ought to be truthy.');
+			
 			ok(result.execute, 'Ought to be truthy.');
 			
 			/*
