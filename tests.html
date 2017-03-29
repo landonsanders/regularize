@@ -40,11 +40,8 @@
 			result = new Regularize('hello world');
 
 			ok(result && typeof result === 'object', 'Ought to be truthy; ought to be an object.');
-			
-			ok(result && result._index, 'Ought to be truthy; ought to be truthy.');
-			ok(result && result.index, 'Ought to be truthy; ought to be truthy.');
-			ok(result.match && typeof result.match === 'function', 'Ought to be truthy; ought to be a function.');
-			// ok(result.replace && typeof result.replace === 'function', 'Ought to be truthy; ought to be a function.');
+			ok(result._getType, 'Ought to be truthy.');
+			ok(result._setType, 'Ought to be truthy.');
 		</script>
 	</body>
 </html>
