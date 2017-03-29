@@ -23,9 +23,43 @@ Regularize.prototype._getType = function () {
 	return result;
 };
 
+Regularize.prototype._setIndex = function (value) {
+	var result;
+	result = value;
+	this.index = result;
+	
+	return result;
+};
+
 Regularize.prototype._getIndex = function () {
 	var result;
 	result = this.index;
 	
 	return result;
 }
+
+Regularize.prototype._search = function (input) {
+	var result;
+	result = this.value.search(value);
+	
+	return result;
+};
+
+Regularize.prototype._index = function (value) {
+	var result;
+	result = this._search(value);
+	
+	return result;
+};
+
+Regularize.prototype.index = function (inputString) {
+	var result;
+	result = this._index(inputString);
+	
+	this._setIndex(result);
+	return this;
+};
+
+
+
+

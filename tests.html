@@ -30,6 +30,26 @@
 
 				console.log(result);
 			}
+			
+			// Testing spy
+			
+			function spyOn(subject, methodName) {
+				var result, CALLED;
+				
+				CALLED = false;
+				
+				
+				function result() {
+					result.CALLED = true;
+					return undefined;
+				}
+				
+				result.CALLED = CALLED;
+				
+				subject[methodName] = result;
+				
+				return subject;
+			}
 		</script>
 
 		<script>
@@ -46,6 +66,16 @@
 			
 			temp = result._getIndex();
 			ok(!temp, 'Ought to be falsy.');
+		
+			ok(result._search, 'Ought to be truthy.');
+			ok(result._index, 'Ought to be truthy.');
+			ok(result.index, 'Ought to be truthy.');
+		
+			result = spyOn(result, '_index');
+			
+			result.index();
+			ok(!result._index.CALLED, 'Ought to be falsy');
+			ok(!!result._index.CALLED, 'Ought to be falsy');
 		</script>
 	</body>
 </html>
