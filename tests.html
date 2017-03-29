@@ -57,19 +57,9 @@
 		
 			ok(Regularize && typeof Regularize === 'function', 'Ought to be truthy; ought to be a function.');
 
-			result = new Regularize('hello world');
+			result = new Regularize('hello hi world\nhello again world');
 
 			ok(result && typeof result === 'object', 'Ought to be truthy; ought to be an object.');
-			ok(result._getType, 'Ought to be truthy.');
-			ok(result._setType, 'Ought to be truthy.');
-			ok(result._getIndex, 'Ought to be truthy.');
-
-			ok(!!temp, 'Ought to be truthy; true.');
-			
-			ok(result._getValue, 'Ought to be truthy.');
-			ok(result._getIgnoreCaseValue, 'Ought to be truthy.');
-			ok(result._getMultiLineValue, 'Ought to be truthy.');
-			ok(result._getGlobalValue, 'Ought to be truthy.');
 		
 			ok(result._setIgnoreCase, 'Ought to be truthy.');
 			ok(result._setMultiLine, 'Ought to be truthy.');
