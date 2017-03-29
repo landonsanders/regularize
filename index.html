@@ -1,0 +1,66 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Regularize</title>
+		
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body
+		<div class="container">
+			<h1>Regularize</h1>
+			<p>The regular way to use regular expressions in Javascript</p>
+			<button>Get it!</button>
+		</div>
+		<div class="container">
+			<p>Don't you wish you could do this?</p>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#808030; '>&lt;</span>script<span style='color:#808030; '>></span>
+<span style='color:#800000; font-weight:bold; '>var</span> result<span style='color:#808030; '>,</span> <span style='color:#797997; '>index</span><span style='color:#808030; '>,</span> temp<span style='color:#800080; '>;</span>
+result <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> R<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>Hello, World!</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+temp <span style='color:#808030; '>=</span> result<span style='color:#808030; '>.</span><span style='color:#797997; '>index</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>H</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span>temp<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> <span style='color:#696969; '>// Ought to be zero</span>
+<span style='color:#808030; '>&lt;</span><span style='color:#808030; '>/</span>script<span style='color:#808030; '>></span>
+</pre>
+		</div>
+		<div class="container">
+			<em>Paste to the console!</em>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>var</span> result<span style='color:#808030; '>,</span> <span style='color:#797997; '>index</span><span style='color:#808030; '>,</span> temp<span style='color:#800080; '>;</span>
+result <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> R<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>Hello, World!</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+temp <span style='color:#808030; '>=</span> result<span style='color:#808030; '>.</span><span style='color:#797997; '>index</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>H</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span>temp<span style='color:#808030; '>.</span>result<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> <span style='color:#696969; '>// Ought to be zero</span>
+
+result<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>replace</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>Hello</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Good-bye</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+console<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>log</span><span style='color:#808030; '>(</span>temp<span style='color:#808030; '>.</span>result<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+		</div>
+		<script src="regularize.js"></script>
+		<script>
+			var button;
+			button = document.getElementsByTagName('button')[0];
+			
+			function handle() {
+				this.location.href;
+			}
+			
+			button.onclick = handle;
+		</script>
+		
+<script>
+var result, index, temp;
+result = new R('Hello, World!');
+
+temp = result.index('H');
+console.log(temp.result); // Ought to be zero
+
+result.replace('Hello', 'Good-bye');
+console.log(temp.result);
+</script>
+	</body>
+</html>
+
+
+
+
+
+

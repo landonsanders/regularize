@@ -1,0 +1,57 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Regularize</title>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Tests</h1>
+			<p>The result of the tests are in the console!?</p>
+		</div>
+		<script src="regularize.js"></script>
+		<script>
+			// Testing assertions
+
+			function assert(value) {
+				var result;
+
+				result = (value)? true: false;
+
+				return result;
+			}
+
+			function ok(value, description) {
+				var result, condition;
+				
+				condition = assert(value);
+				result = (condition)? 'PASS: ' + description: 'FAIL: ' + description;
+
+				console.log(result);
+			}
+		</script>
+
+		<script>
+			var result, temp;
+		
+			ok(Regularize && typeof Regularize === 'function', 'Ought to be truthy; ought to be a function.');
+
+			result = new Regularize('hello world');
+
+			ok(result && typeof result === 'object', 'Ought to be truthy; ought to be an object.');
+			ok(result.execute && typeof result.execute === 'function', 'Ought to be truthy; ought to be a function.');
+			
+			ok(result && result._index, 'Ought to be truthy; ought to be truthy.');
+			ok(result && result.index, 'Ought to be truthy; ought to be truthy.');
+
+			ok(typeof temp === 'number' && temp === 0, 'Ought to be a number; ought to be zero.');
+			
+			ok(result.match && typeof result.match === 'function', 'Ought to be truthy; ought to be a function.');
+			
+			ok(temp && typeof temp === 'object' && temp instanceof Array && temp[0] === 'hello', 'Ought to be in these conditions: truthy, object, Array instance, "hello" at first index.');
+			
+			ok(result.replace && typeof result.replace === 'function', 'Ought to be truthy; ought to be a function.');
+		</script>
+	</body>
+</html>
