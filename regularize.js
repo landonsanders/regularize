@@ -4,10 +4,15 @@ R = Regularize;
 
 function Regularize(inputString) {
 	this.value = new RegExp(inputString);
-	this.input = inputString;
+	this.inputString = inputString;
 	this.ignoreCaseValue = new RegExp(inputString, 'i');
 	this.globalValue = new RegExp(inputString, 'g');
 	this.multiLineValue = new RegExp(inputString, 'm'); 
+	
+	this.ignoreCaseValueFlag = false;
+	this.ignoreGlobalValueFlag = false;
+	this.ignoreMultiLineValueFlag = false;
+	
 	this.result = undefined;
 	this.type = this._getType();
 	this.index = this._getIndex() || undefined;
@@ -41,34 +46,37 @@ Regularize.prototype._getIndex = function () {
 	return result;
 }
 
-Regularize.prototype._search = function (inputString) {
-	var result;
-	result = this.input.search(inputString);
-	
-	return result;
-};
-
-Regularize.prototype._setIgnoreCaseValue = function (inputString) {
+Regularize.prototype._setIgnoreCase = function (inputString) {
 	var result;
 	this.value = this.ignoreCaseValue;
+	this.ignoreCaseValueFlag = true;
 	
 	result = this.value;
 	return result;
 };
 
-Regularize.prototype._getGlobalValue = function (inputString) {
+Regularize.prototype._setGlobal = function (inputString) {
 	var result;
 	this.value = this.globalValue;
+	this.globalValueFlag = true;
 	
 	result = this.value;
 	return result;
 };
 
-Regularize.prototype._setMultiLineValue = function (inputString) {
+Regularize.prototype._setMultiLine = function (inputString) {
 	var result;
 	this.value = this.multiLineValue;
+	this.multiLineValueFlag = true;
 	
 	result = this.value;
+	return result;
+};
+
+Regularize.prototype._getValue = function () {
+	var result;
+	result = this.value;
+	
 	return result;
 };
 
@@ -93,16 +101,29 @@ Regularize.prototype._getMultiLineValue = function (inputString) {
 	return result;
 };
 
-
-Regularize.prototype.search = function (inputString) {
-	var result;
-	result = this._search(inputString);
+Regularize.prototype.doIgnoreCase = function () {
+	this._setIgnoreCase();
 	
-	this._setIndex(result);
-	this.result = result;
 	return this;
 };
 
+Regularize.prototype.doMultiLine = function () {
+	this._setMultiLine();
+	
+	return this;
+};
 
+Regularize.prototype.doGlobal = function () {
+	this._setGlobal();
+	
+	return this;
+};
 
-
+Regularize.prototype.addFlags = function (flags) {
+	var result;
+	result = new RegExp(this.inputString, flags);	
+	
+	this.value = result;
+	
+	return this;
+};

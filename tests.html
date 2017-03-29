@@ -63,23 +63,23 @@
 			ok(result._getType, 'Ought to be truthy.');
 			ok(result._setType, 'Ought to be truthy.');
 			ok(result._getIndex, 'Ought to be truthy.');
+
+			ok(!!temp, 'Ought to be truthy; true.');
 			
-			temp = result._getIndex();
-			ok(!temp, 'Ought to be falsy; _getIndex.');
-		
-			ok(result._search, 'Ought to be truthy.');
-			ok(result.search, 'Ought to be truthy.');
-			
-			temp = result.search('H').result;
-			ok(!!temp, 'Ought to be falsy.');
-			
+			ok(result._getValue, 'Ought to be truthy.');
 			ok(result._getIgnoreCaseValue, 'Ought to be truthy.');
 			ok(result._getMultiLineValue, 'Ought to be truthy.');
 			ok(result._getGlobalValue, 'Ought to be truthy.');
 		
-			ok(result._setIgnoreCaseValue, 'Ought to be truthy.');
-			ok(result._setMultiLineValue, 'Ought to be truthy.');
-			ok(result._setGlobalValue, 'Ought to be truthy.');
+			ok(result._setIgnoreCase, 'Ought to be truthy.');
+			ok(result._setMultiLine, 'Ought to be truthy.');
+			ok(result._setGlobal, 'Ought to be truthy.');
+			
+			ok(result.doIgnoreCase, 'Ought to be truthy.');
+			ok(result.doMultiLine, 'Ought to be truthy.');
+			ok(result.doGlobal, 'Ought to be truthy.');
+			
+			ok(result.addFlags, 'Ought to be truthy.');
 			
 			/*
 				result = spyOn(result, '_index');
