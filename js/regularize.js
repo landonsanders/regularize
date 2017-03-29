@@ -11,7 +11,9 @@ function Regularize(inputString) {
 }
 
 Regularize.prototype.check = function () {
-	return this.value.test(this.inputString);
+	this.found = this.value.test(this.inputString);
+	
+	return this;
 };
 
 Regularize.prototype.beginsWith = function (patternString) {
