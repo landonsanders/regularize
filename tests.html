@@ -60,16 +60,6 @@
 			result = new Regularize('hello hi world\nhello again world');
 
 			ok(result && typeof result === 'object', 'Ought to be truthy; ought to be an object.');
-		
-			ok(result._setIgnoreCase, 'Ought to be truthy.');
-			ok(result._setMultiLine, 'Ought to be truthy.');
-			ok(result._setGlobal, 'Ought to be truthy.');
-			
-			ok(result.doIgnoreCase, 'Ought to be truthy.');
-			ok(result.doMultiLine, 'Ought to be truthy.');
-			ok(result.doGlobal, 'Ought to be truthy.');
-			
-			ok(result.addFlags, 'Ought to be truthy.');
 			
 			ok(result.beginsWith, 'Ought to be truthy.');
 			ok(result.endsWith, 'Ought to be truthy.');
