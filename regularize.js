@@ -6,53 +6,18 @@ function Regularize(inputString) {
 	this.result = undefined;
 	this.input = inputString;
 	this.value = new RegExp(inputString);	
+	this.type = this._getType();
 }
 
-Regularize.prototype._index = function (patternString) {
+Regularize.prototype._setType = function (value) {
 	var result;
-	result = this.input.search(patternString);
-	
-	return result;
+	result = typeof value;
+	this.type = result;
 };
 
-Regularize.prototype._match = function (patternString) {
+Regularize.prototype._getType = function () {
 	var result;
-	result = this.input.match(patternString) + '';
+	result = typeof this.result;
 	
-	return result;
-};
-
-Regularize.prototype._replace = function (from, to) {
-	var result;
-	
-	result = this.input.replace(from, to);
-	return result;
-};
-
-Regularize.prototype.index = function (patternString) {
-	var result;
-	this.result = this._index(patternString);
-	
-	return this;
-};
-
-Regularize.prototype.match = function (patternString) {
-	var result;
-	this.result = this._match(patternString);
-	
-	return this;
-};
-
-Regularize.prototype.replace = function (from, to) {
-	var result;
-	
-	this.result = this._replace(from, to);
-	return this;
-};
-
-Regularize.prototype.get = function () {
-	var result;
-	
-	result = this.result;
 	return result;
 };
