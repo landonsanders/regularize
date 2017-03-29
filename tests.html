@@ -42,6 +42,10 @@
 			ok(result && typeof result === 'object', 'Ought to be truthy; ought to be an object.');
 			ok(result._getType, 'Ought to be truthy.');
 			ok(result._setType, 'Ought to be truthy.');
+			ok(result._getIndex, 'Ought to be truthy.');
+			
+			temp = result._getIndex();
+			ok(!temp, 'Ought to be falsy.');
 		</script>
 	</body>
 </html>

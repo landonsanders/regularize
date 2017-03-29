@@ -3,10 +3,11 @@ var Regularize, R;
 R = Regularize;
 
 function Regularize(inputString) {
-	this.result = undefined;
+	this.value = new RegExp(inputString);
 	this.input = inputString;
-	this.value = new RegExp(inputString);	
+	this.result = undefined;
 	this.type = this._getType();
+	this.index = this._getIndex() || undefined;
 }
 
 Regularize.prototype._setType = function (value) {
@@ -21,3 +22,10 @@ Regularize.prototype._getType = function () {
 	
 	return result;
 };
+
+Regularize.prototype._getIndex = function () {
+	var result;
+	result = this.index;
+	
+	return result;
+}
