@@ -10,23 +10,34 @@ function Regularize(inputString) {
 	this.found = false;
 }
 
-Regularize.prototype.check = function () {
-	this.found = this.value.test(this.inputString);
-	
-	return this;
-};
-
-Regularize.prototype.beginsWith = function (patternString) {
-	var result;
-	
-	this.value = new RegExp(patternString, 'g');
-	
-	return this;
-};
-
 Regularize.prototype.execute = function () {
-	
-	this.result = this.value.exec(this.inputString);
-	
+	this.result = (this.value.exec(this.inputString)).toString();
+
 	return this;
 };
+
+Regularize.prototype.next = function () {
+	this.execute()
+
+	return this;
+};
+
+Regularize.prototype.words = function () {
+	this.value = /[a-zA-Z]+/g;
+
+	return this;
+};
+
+Regularize.prototype.digits = function () {
+	this.value = /[0-9]+/g;
+
+	return this;
+};
+
+Regularize.prototype.wordsAndDigits = function () {
+	this.value = /[a-zA-Z0-9]+/g;
+
+	return this;
+};
+
+

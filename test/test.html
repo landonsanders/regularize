@@ -8,7 +8,7 @@
 	<body>
 		<div class="container">
 			<h1>Tests</h1>
-			<p>The result of the tests are in the console!?</p>
+			<p>Testing is important, because it tells you what code is and what it does (<em>The result of the tests are in the console.</em>).</p>
 		</div>
 		<script src="../js/regularize.js"></script>
 		<script>
@@ -57,21 +57,29 @@
 		
 			ok(Regularize && typeof Regularize === 'function', 'Ought to be truthy; ought to be a function.');
 
-			result = new Regularize('hello hi world\nhello again world');
+			result = new Regularize("1. hello hay world\n2. hey again world");
 
-			ok(result && typeof result === 'object', 'Ought to be truthy; ought to be an object.');
-			
-			ok(result.beginsWith, 'Ought to be truthy.');
-			
-			temp = result.beginsWith('h');
-			ok(temp, 'Ought to be truthy.');
-			
 			ok(result.execute, 'Ought to be truthy.');
-			ok(result.check, 'Ought to be truthy.');
-			
-			temp = result.check();
-			ok(temp, 'Ought to be truthy.');
-			
+			ok(result.next, 'Ought to be truthy.');
+	
+			ok(result.words, 'Ought to be truthy.');
+
+			temp = result.words().execute().result;
+			ok(temp && temp === 'hello', 'Ought to be truthy; ought to be something else.');
+
+			ok(result.digits, 'Ought to be truthy.');
+
+			temp = result.digits().execute().result;
+			ok(temp && temp === '1', 'Ought to be truthy; ought to be something else.');
+
+			ok(result.wordsAndDigits, 'Ought to be truthy.');
+
+			temp = result.wordsAndDigits().execute().result;
+			ok(temp && temp === '1', 'Ought to be truthy; ought to be something else.');
+
+			temp = result.next().result;
+			ok(temp && temp === 'hello', 'Ought to be truthy; ought to be something else.');
+
 			/*
 				result = spyOn(result, '_index');
 				
