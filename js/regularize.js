@@ -1,43 +1,80 @@
-var Regularize, R;
+(function (exports) {
+	var R;
 
-R = Regularize;
+	function Regularize(inputString) {
+		this.inputString = inputString;
+		this.pattern = undefined;
+		this.flags = '';
+		this.result = undefined;
+	}
 
-function Regularize(inputString) {
-	this.value = null;
-	this.inputString = inputString;
+	R = Regularize;
 	
-	this.result = undefined;
-	this.found = false;
-}
+	R.prototype.exp = function () {};
+	
+	R.prototype.search = function () {};
+	
+	R.prototype.match = function () {};
+			
+	R.prototype._match = function () {};
+	
+	R.prototype.replace = function () {};
+	
+	R.prototype.inText = function () {};	
+	
+	R.prototype.startsText = function () {};
+	
+	R.prototype.endsText = function () {};
+	
+	R.prototype.endsWith = function () {};	
+	
+	R.prototype.startsWith = function () {};
+	
+	R.prototype.words = function () {};
+	
+	R.prototype.digits = function () {};
+	
+	R.prototype.wordsAndDigits = function () {};
+	
+	R.prototype.characters = function () {};
+	
+	R.prototype.firstMatch = function () {};
+	
+	R.prototype.lastMatch = function () {};
+	
+	R.prototype.nthMatch = function () {};
 
-Regularize.prototype.execute = function () {
-	this.result = (this.value.exec(this.inputString)).toString();
+	R.prototype.count = function () {};
+	
+	R.prototype.ignore = function () {};
+	
+	R.prototype.all = function () {};
+	
+	R.prototype.notAll = function () {};
+	
+	R.prototype.notIgnore = function () {};
+	
+	R.prototype.anyCharacter = function () {};
+	
+	R.prototype.anyWord = function () {};
+	
+	R.prototype.anyDigit = function () {};
+	
+	R.prototype.anyDigits = function () {};
+	
+	R.prototype.anyDigitsAndWords = function () {};
+	
+	R.prototype.followedBy = function () {};
+	
+	R.prototype.build = function () {};
+	
+	R.prototype.getResult = function () {};
 
-	return this;
-};
+	R.prototype.getBuildResult = function () {};
+	
+	
+	R.fn = Regularize.prototype;
 
-Regularize.prototype.next = function () {
-	this.execute()
-
-	return this;
-};
-
-Regularize.prototype.words = function () {
-	this.value = /[a-zA-Z]+/g;
-
-	return this;
-};
-
-Regularize.prototype.digits = function () {
-	this.value = /[0-9]+/g;
-
-	return this;
-};
-
-Regularize.prototype.wordsAndDigits = function () {
-	this.value = /[a-zA-Z0-9]+/g;
-
-	return this;
-};
-
-
+	exports.Regularize = Regularize;
+	exports.R = Regularize;
+} (window));

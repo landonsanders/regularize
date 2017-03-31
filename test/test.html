@@ -53,34 +53,46 @@
 		</script>
 
 		<script>
-			(function (global) {
-				var result, temp;
+			(function () {
+				var instance, temp;
 			
 				ok(Regularize && typeof Regularize === 'function', 'Ought to be truthy; ought to be a function.');
-	
-				result = new Regularize('hello hi world\nhello again world');
-	
-				ok(result && typeof result === 'object', 'Ought to be truthy; ought to be an object.');
+				ok(R && typeof R === 'function', 'Ought to be truthy; ought to be a function.');
 				
-				ok(result.beginsWith, 'Ought to be truthy.');
-				
-				temp = result.beginsWith('h');
-				ok(temp, 'Ought to be truthy.');
-				
-				ok(result.execute, 'Ought to be truthy.');
-				ok(result.check, 'Ought to be truthy.');
-				
-				temp = result.check();
-				ok(temp, 'Ought to be truthy.');
-				
-				/*
-					result = spyOn(result, '_index');
-					
-					result.index();
-					ok(!result._index.CALLED, 'Ought to be falsy');
-					ok(!!result._index.CALLED, 'Ought to be falsy');
-				*/
-			})(window);
+				result = new R('1. Go to Market 2. Stay home 3. Have roast beef 4. Have none 5. Cry wee wee wee');
+				ok(result && typeof result ==='object', 'Ought to be truthy; ought to be an object.');
+				ok(result && typeof result.exp ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.search ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.match ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result._match ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.replace ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.inText ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.startsText ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.endsText ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.endsWith ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.startsWith ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.words ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.digits ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.wordsAndDigits ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.characters ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.firstMatch ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.lastMatch ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.nthMatch ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.count ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.ignore ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.all ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.notAll ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.notIgnore ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.anyCharacter ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.anyWord ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.anyDigit ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.anyDigits ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.anyDigitsAndWords ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.followedBy ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.build ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.getBuildResult ==='function', 'Ought to be truthy; ought to have a certain method.');
+				ok(result && typeof result.getResult ==='function', 'Ought to be truthy; ought to have a certain method.');
+			})();
 		</script>
 	</body>
 </html>
