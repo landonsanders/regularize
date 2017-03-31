@@ -13,6 +13,6 @@ Regularize has flags, like regular expressions do. For example, you can ignore c
 ```javascript
 	result.search('market').getResult()
 	// -1
-	result.search('market').ignore().getResult()
+	result.ignore().search('market').getResult()
 	// 9
 ```

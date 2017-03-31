@@ -21,7 +21,11 @@
 		return this;
 	};
 	
-	R.prototype.match = function () {};
+	R.prototype.match = function (value) {
+		this.pattern = new RegExp(value, this.flag);
+		this.result = (this.inputString.match(this.pattern));
+		return this;
+	};
 			
 	R.prototype._match = function () {};
 	
