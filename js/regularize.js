@@ -4,15 +4,22 @@
 	function Regularize(inputString) {
 		this.inputString = inputString;
 		this.pattern = undefined;
-		this.flags = '';
+		this.flag = '';
 		this.result = undefined;
 	}
 
 	R = Regularize;
 	
-	R.prototype.exp = function () {};
+	R.prototype.exp = function (value) {
+		this.inputString = value;
+		return this;
+	};
 	
-	R.prototype.search = function () {};
+	R.prototype.search = function (value) {
+		this.pattern = new RegExp(value, this.flag);
+		this.result = (this.inputString.search(this.pattern));
+		return this;
+	};
 	
 	R.prototype.match = function () {};
 			
@@ -46,7 +53,12 @@
 
 	R.prototype.count = function () {};
 	
-	R.prototype.ignore = function () {};
+	R.prototype.ignore = function () {
+		if (this.flag.indexOf('i') === -1) {
+			this.flag = this.flag + 'i';
+		}
+		return this;
+	};
 	
 	R.prototype.all = function () {};
 	
@@ -68,7 +80,9 @@
 	
 	R.prototype.build = function () {};
 	
-	R.prototype.getResult = function () {};
+	R.prototype.getResult = function () {
+		return this.result;
+	};
 
 	R.prototype.getBuildResult = function () {};
 	
@@ -78,3 +92,5 @@
 	exports.Regularize = Regularize;
 	exports.R = Regularize;
 } (window));
+
+

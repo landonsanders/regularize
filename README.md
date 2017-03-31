@@ -3,5 +3,16 @@ For what you wish you could do with regular expressions, that while chaining.
 
 ```javascript
 			var result;
-			result = new Regularize("1. hello hay world\n2. hey again world");	
+			result = new R('1. Go to Market 2. Stay home 3. Have roast beef 4. Have none 5. Cry wee wee wee');
+			// R is short for Regularize
+```
+# Flags
+
+Regularize has flags, like regular expressions do. For example, you can ignore case.
+
+```javascript
+			result.search('market').getResult()
+			// -1
+			result.search('market').ignore().getResult()
+			// 9
 ```
