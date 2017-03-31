@@ -1,4 +1,4 @@
-## Regularize
+# Regularize
 For what you wish you could do with regular expressions, that while chaining.
 
 ```javascript
@@ -6,7 +6,7 @@ For what you wish you could do with regular expressions, that while chaining.
 	result = new R('1. Go to Market 2. Stay home 3. Have roast beef 4. Have none 5. Cry wee wee wee');
 	// R is short for Regularize
 ```
-# Flags
+## Flags
 
 Regularize has flags, like regular expressions do. For example, you can ignore case.
 
@@ -15,4 +15,12 @@ Regularize has flags, like regular expressions do. For example, you can ignore c
 	// -1
 	result.ignore().search('market').getResult()
 	// 9
+```
+
+## Replace 
+ 
+You can replace something in a text with something else.
+
+```javascript
+	result.replace('Market', 'market').getResult()
 ```
