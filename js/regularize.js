@@ -38,31 +38,75 @@
 		return this;
 	};
 	
-	R.prototype.inText = function () {};	
+	R.prototype.inText = function (value) {
+		this.pattern = value;
+		this.match(this.pattern);
+		return this;
+	};	
 	
-	R.prototype.startsText = function () {};
+	R.prototype.startsText = function (value) {
+		this.pattern = '^' + value;
+		this.match(this.pattern);
+		return this;
+	};
 	
-	R.prototype.endsText = function () {};
+	R.prototype.endsText = function (value) {
+		this.pattern = value + '$';
+		this.match(this.pattern);
+		return this;
+	};
 	
-	R.prototype.endsWith = function () {};	
+	R.prototype.endsWith = function (value) {
+		this.pattern = '.+' + value;
+		this.match(this.pattern);
+		return this;
+	};	
 	
-	R.prototype.startsWith = function () {};
+	R.prototype.startsWith = function (value) {
+		this.pattern = value + '.+';
+		this.match(this.pattern);
+		return this;
+	};
 	
-	R.prototype.words = function () {};
+	R.prototype.words = function () {
+		this.pattern = '\\w{2,}';
+		this.match(this.pattern);
+		return this;
+	};
 	
-	R.prototype.digits = function () {};
+	R.prototype.digits = function () {
+		this.pattern = '\\d+';
+		this.match(this.pattern);
+		return this;		
+	};
 	
-	R.prototype.wordsAndDigits = function () {};
+	R.prototype.wordsAndDigits = function () {
+		this.pattern = '[a-zA-Z0-9]+';
+		this.match(this.pattern);
+		return this;
+	};
 	
-	R.prototype.characters = function () {};
+	R.prototype.characters = function () {
+		this.pattern = '[a-zA-Z0-9]';
+		this.match(this.pattern);
+		return this;		
+	};
 	
-	R.prototype.firstMatch = function () {};
+	R.prototype.firstMatch = function () {
+		return this.result[0];		
+	};
 	
-	R.prototype.lastMatch = function () {};
+	R.prototype.lastMatch = function () {	
+		return this.result[this.result.length - 1];
+	};
 	
-	R.prototype.nthMatch = function () {};
+	R.prototype.nthMatch = function (n) {
+		return this.result[n];
+	};
 
-	R.prototype.count = function () {};
+	R.prototype.count = function () {
+		return this.result.length;		
+	};
 	
 	R.prototype.ignore = function () {
 		if (this.flag.indexOf('i') === -1) {
@@ -71,11 +115,12 @@
 		return this;
 	};
 	
-	R.prototype.all = function () {};
-	
-	R.prototype.notAll = function () {};
-	
-	R.prototype.notIgnore = function () {};
+	R.prototype.all = function () {
+		if (this.flag.indexOf('g') === -1) {
+			this.flag = this.flag + 'g';
+		}
+		return this;		
+	};
 	
 	R.prototype.anyCharacter = function () {};
 	
