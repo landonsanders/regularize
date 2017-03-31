@@ -27,9 +27,16 @@
 		return this;
 	};
 			
-	R.prototype._match = function () {};
+	R.prototype._match = function () {
+		this.match(this.pattern);
+		return this;
+	};
 	
-	R.prototype.replace = function () {};
+	R.prototype.replace = function (value, replacement) {
+		this.pattern = new RegExp(value, this.flag);
+		this.result = (this.inputString.replace(this.pattern, replacement));
+		return this;
+	};
 	
 	R.prototype.inText = function () {};	
 	
@@ -80,7 +87,9 @@
 	
 	R.prototype.anyDigitsAndWords = function () {};
 	
-	R.prototype.followedBy = function () {};
+	R.prototype.followedBy = function () {
+		return this;		
+	};
 	
 	R.prototype.build = function () {};
 	
