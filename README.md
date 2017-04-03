@@ -25,3 +25,13 @@ You can replace something in a text with something else.
 	result.replace('Market', 'market').getResult();
 	// 1. Go to market 2. Stay home 3. Have roast beef 4. Have none 5. Cry wee wee wee
 ```
+
+## Is Email
+
+Regaularize gives you isEmail instead of wings.
+
+```javascript
+	result.inputString = 'joe@person.com';
+	result.isEmail();
+	// Is true
+```
