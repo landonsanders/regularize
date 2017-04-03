@@ -28,7 +28,7 @@ You can replace something in a text with something else.
 
 ## Is Email
 
-Regaularize gives you isEmail instead of wings.
+Regularize gives you isEmail instead of wings.
 
 ```javascript
 	result.inputString = 'joe@person.com';
