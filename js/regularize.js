@@ -2,10 +2,10 @@
 	var R;
 
 	function Regularize(inputString) {
-		this.inputString = inputString;
-		this.pattern = undefined;
+		this.inputString = inputString || '';
+		this.pattern = null;
 		this.flag = '';
-		this.result = undefined;
+		this.result = null;
 	}
 
 	R = Regularize;
@@ -122,28 +122,16 @@
 		return this;		
 	};
 	
-	R.prototype.anyCharacter = function () {};
-	
-	R.prototype.anyWord = function () {};
-	
-	R.prototype.anyDigit = function () {};
-	
-	R.prototype.anyDigits = function () {};
-	
-	R.prototype.anyDigitsAndWords = function () {};
-	
-	R.prototype.followedBy = function () {
-		return this;		
+	R.prototype.isEmail = function () {
+		var result;
+		
+		result = (this.inputString.indexOf('@') > -1);
+		return result;
 	};
-	
-	R.prototype.build = function () {};
 	
 	R.prototype.getResult = function () {
 		return this.result;
 	};
-
-	R.prototype.getBuildResult = function () {};
-	
 	
 	R.fn = Regularize.prototype;
 
